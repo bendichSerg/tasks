@@ -3,7 +3,8 @@ import java.util.Set;
 
 public class BoardSolution {
     public static final int BOARD_SIDE = 9;
-    public static final Set <Character> SET_BOARD_ELEMENTS = Set.of('1', '2', '3', '4', '5', '6', '7', '8', '9', '.');
+    public static final Set<Character> VARIETY_BOARD_ELEMENTS = Set.of('1', '2', '3', '4', '5', '6', '7', '8', '9', '.');
+
     public char[][] getBoard() {
         return new char[][]{{'5', '3', '.', '.', '7', '.', '.', '.', '.'}
                 , {'6', '.', '.', '1', '9', '5', '.', '.', '.'}
@@ -16,27 +17,26 @@ public class BoardSolution {
                 , {'.', '.', '.', '.', '8', '.', '.', '7', '9'}};
     }
 
-    protected boolean symbolIsNotInSetBoardElAndInSetBoardRow(char element, Set<Character> setBoardRow, Set<Character> setBoardEl) {
-        return (!setBoardEl.contains(element)) || (setBoardRow.contains(element) && (element != '.'));
+    protected boolean symbolIsInSetBoardRow(char element, Set<Character> setBoardRow) {
+        return (setBoardRow.contains(element) && (element != '.'));
     }
 
-    protected boolean symbolIsNotInSetBoardElAndInSetBoardColumn(char element, Set<Character> setBoardColumn, Set<Character> setBoardEl) {
-        return (!setBoardEl.contains(element)) || (setBoardColumn.contains(element) && (element != '.'));
+    protected boolean symbolIsInSetBoardColumn(char element, Set<Character> setBoardColumn) {
+        return (setBoardColumn.contains(element) && (element != '.'));
     }
 
     public String isValidBoard(char[][] board) {
         for (int i = 0; i < BOARD_SIDE; ++i) {
             Set<Character> tmpSetRow = new HashSet<>();
             Set<Character> tmpSetColumn = new HashSet<>();
-//            SET_BOARD_ELEMENTS.contains(board[i][j])
             for (int j = 0; j < BOARD_SIDE; ++j) {
-                if (symbolIsNotInSetBoardElAndInSetBoardRow(board[i][j], tmpSetRow, SET_BOARD_ELEMENTS)) {
+                if (!VARIETY_BOARD_ELEMENTS.contains(board[i][j]) || symbolIsInSetBoardRow(board[i][j], tmpSetRow)) {
                     return "Matrix is not valid";
                 } else {
                     tmpSetRow.add(board[i][j]);
                 }
 
-                if (symbolIsNotInSetBoardElAndInSetBoardColumn(board[j][i], tmpSetColumn, SET_BOARD_ELEMENTS)) {
+                if (!VARIETY_BOARD_ELEMENTS.contains(board[j][i]) || symbolIsInSetBoardColumn(board[j][i], tmpSetColumn)) {
                     return "Matrix is not valid";
                 } else {
                     tmpSetColumn.add(board[j][i]);
