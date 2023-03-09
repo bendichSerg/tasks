@@ -16,11 +16,11 @@ public class BoardSolution {
                 , {'.', '.', '.', '.', '8', '.', '.', '7', '9'}};
     }
 
-    public boolean symbolIsNotInSetBoardElAndInSetBoardRow(char element, Set<Character> setBoardRow, Set<Character> setBoardEl) {
+    protected boolean symbolIsNotInSetBoardElAndInSetBoardRow(char element, Set<Character> setBoardRow, Set<Character> setBoardEl) {
         return (!setBoardEl.contains(element)) || (setBoardRow.contains(element) && (element != '.'));
     }
 
-    public boolean symbolIsNotInSetBoardElAndInSetBoardColumn(char element, Set<Character> setBoardColumn, Set<Character> setBoardEl) {
+    protected boolean symbolIsNotInSetBoardElAndInSetBoardColumn(char element, Set<Character> setBoardColumn, Set<Character> setBoardEl) {
         return (!setBoardEl.contains(element)) || (setBoardColumn.contains(element) && (element != '.'));
     }
 
