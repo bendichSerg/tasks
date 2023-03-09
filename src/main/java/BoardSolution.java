@@ -32,7 +32,7 @@ public class BoardSolution {
                     tmpSetRow.add(board[i][j]);
                 }
 
-                if ((!SET_BOARD_ELEMENTS.contains(board[i][j]))
+                if ((!SET_BOARD_ELEMENTS.contains(board[j][i]))
                         && (tmpSetColumn.contains(board[j][i])
                         && (board[j][i] != '.'))) {
                     return "Matrix is not valid";
