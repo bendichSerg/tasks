@@ -3,6 +3,8 @@ public class Main {
         BoardSolution boardSolution = new BoardSolution();
         char[][] board = boardSolution.getBoard();
         System.out.println(boardSolution.isValidBoard(board));
+
+
     }
 
 }
