@@ -2,7 +2,7 @@ package json_solution.json_parser;
 
 import json_solution.data_work.FileOutputStrategy;
 import json_solution.data_work.KeyboardOutputStrategy;
-import json_solution.data_work.print_strategy.PrintJsonStrategyInterface;
+import json_solution.data_work.print_strategy.PrintJsonStrategy;
 import json_solution.dto.UserDto;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -12,7 +12,7 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class JsonParser {
-    PrintJsonStrategyInterface outputStrategy;
+    PrintJsonStrategy outputStrategy;
 
     public Document jsonParsingFile(String nameFile) {
         Document doc = null;
