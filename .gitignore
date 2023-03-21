@@ -152,7 +152,7 @@
 #buildNumber.properties
 #.mvn/timing.properties
 #.mvn/wrapper/maven-wrapper.jar
-#src/main/java/other_projects/
+#src/main/java/otherprojects/
 
 ##############################
 ## Java

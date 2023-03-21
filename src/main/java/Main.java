@@ -1,11 +1,10 @@
-import json_solution.json_parser.JsonParser;
+import jsonsolution.urljsonparser.UrlJsonParser;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println(args[0]);
         String jsonAddress = "https://api.ipify.org/?format=json";
-        JsonParser jPars = new JsonParser();
-        jPars.findJsonSolution(jsonAddress);
-
+        UrlJsonParser jPars = new UrlJsonParser();
+        jPars.findAndSaveJsonFromUrl(jsonAddress, args[0]);
     }
-
 }

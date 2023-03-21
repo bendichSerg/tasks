@@ -1,4 +1,4 @@
-package json_solution.data_work.print_strategy;
+package jsonsolution.jsonoutput.printstrategy;
 
 public interface PrintJsonStrategy {
     public void output(String json);
