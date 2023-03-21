@@ -21,7 +21,7 @@ public class FileOutputStrategy implements PrintJsonStrategy {
         try (FileWriter writer = new FileWriter("output.json", false)) {
             writer.write(json);
         } catch (IOException e) {
-            e.printStackTrace();
+            e.printStackTrace(); //посмотреть про вывод и try catch
         }
     }
 }
