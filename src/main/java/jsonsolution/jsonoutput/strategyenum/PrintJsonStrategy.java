@@ -1,26 +1,21 @@
 package jsonsolution.jsonoutput.strategyenum;
 
-import java.io.FileWriter;
-import java.io.IOException;
+import jsonsolution.jsonoutput.ConsoleOutputStrategy;
+import jsonsolution.jsonoutput.FileOutputStrategy;
 
-public enum PrintJsonStrategy implements jsonsolution.jsonoutput.strategyinterface.ConsoleOutputStrategy {
+public enum PrintJsonStrategy implements jsonsolution.jsonoutput.strategyinterface.PrintJsonStrategy {
     CONSOLE_OUTPUT_STRATEGY("console") {
-        @Override
         public void output(String json) {
-            System.out.println(json);
+            ConsoleOutputStrategy consoleOutputStrategy = new ConsoleOutputStrategy();
+            consoleOutputStrategy.output(json);
         }
     },
     FILE_OUTPUT_STRATEGY("file") {
-        @Override
         public void output(String json) {
-            try (FileWriter writer = new FileWriter(FILE_NAME, false)) {
-                writer.write(json);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            FileOutputStrategy fileOutputStrategy = new FileOutputStrategy();
+            fileOutputStrategy.output(json);
         }
     };
-    private static final String FILE_NAME = "output.json";
     private final String outputStrategy;
 
     public String getOutputStrategy() {
@@ -31,16 +26,15 @@ public enum PrintJsonStrategy implements jsonsolution.jsonoutput.strategyinterfa
         this.outputStrategy = arg;
     }
 
-    public static PrintJsonStrategy getStrategyByName(String nameStrategy){
-        for(PrintJsonStrategy tmpPrintJsonStrategy : values()){
-            if(tmpPrintJsonStrategy.getOutputStrategy().equals(nameStrategy)){
+    public static PrintJsonStrategy getStrategyByName(String nameStrategy) {
+        for (PrintJsonStrategy tmpPrintJsonStrategy : values()) {
+            if (tmpPrintJsonStrategy.getOutputStrategy().equals(nameStrategy)) {
                 return tmpPrintJsonStrategy;
             }
         }
 
         throw new IllegalArgumentException("Uncorrect name");
     }
-
 
 }
 

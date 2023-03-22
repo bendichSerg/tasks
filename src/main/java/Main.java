@@ -5,6 +5,6 @@ public class Main {
         System.out.println(args[1]);
         String jsonAddress = "https://api.ipify.org/?format=json";
         UrlJsonParser jPars = new UrlJsonParser();
-        jPars.findAndSaveJsonFromUrl(jsonAddress, args[1]);
+        jPars.findAndSaveJsonFromUrl(jsonAddress, args[0]);
     }
 }
