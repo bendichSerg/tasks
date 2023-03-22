@@ -1,15 +1,15 @@
 package jsonsolution.urljsonparser;
 
-import jsonsolution.jsonoutput.ConsoleOutputStrategy;
-import jsonsolution.jsonoutput.FileOutputStrategy;
-import jsonsolution.jsonoutput.printstrategy.PrintJsonStrategy;
+import jsonsolution.jsonoutput.strategyenum.PrintJsonStrategy;
+import lombok.Data;
 import org.jsoup.HttpStatusException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 import java.io.IOException;
-import java.util.Objects;
 
+
+@Data
 public class UrlJsonParser {
     private PrintJsonStrategy outputStrategy;
 
@@ -25,19 +25,13 @@ public class UrlJsonParser {
         return doc;
     }
 
-    public void chooseDataOutputStrategy(String arg) {
-        if (Objects.equals(arg, "file")) {
-            outputStrategy = new FileOutputStrategy();
-        } else if (Objects.equals(arg, "console")) {
-            outputStrategy = new ConsoleOutputStrategy();
-        }
+    public PrintJsonStrategy chooseDataOutputStrategy(String arg) {
+        return PrintJsonStrategy.getStrategyByName(arg);
     }
 
     public void findAndSaveJsonFromUrl(String url, String arg) {
         String json = urlConnection(url).body().text();
-
-        chooseDataOutputStrategy(arg);
-
+        outputStrategy = chooseDataOutputStrategy(arg);
         outputStrategy.output(json);
     }
 }

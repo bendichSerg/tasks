@@ -1,15 +1,8 @@
 package jsonsolution.dto;
 
+import lombok.Data;
+
+@Data
 public class UserDto {
     private String ip;
-
-    public String getIp() {
-        return ip;
-    }
-
-    public void setIp(String ip) {
-        this.ip = ip;
-    }
-
-
 }
