@@ -29,11 +29,11 @@ public enum PrintJsonStrategy implements jsonsolution.jsonoutput.strategyinterfa
         this.outputStrategy = arg;
     }
 
-    private static final Map<String, PrintJsonStrategy> colors = Arrays.stream(PrintJsonStrategy.values())
+    private static final Map<String, PrintJsonStrategy> args = Arrays.stream(PrintJsonStrategy.values())
             .collect(Collectors.toMap(k -> k.outputStrategy, v -> v));
 
-    public static PrintJsonStrategy getStrategyByName(String colorName) {
-        return colors.get(colorName);
+    public static PrintJsonStrategy getStrategyByName(String arg) {
+        return args.get(arg);
     }
 
 }
