@@ -1,10 +1,9 @@
 import jsonsolution.urljsonparser.UrlJsonParser;
 
 public class Main {
+    private static final String JSON_ADDRESS = "https://api.ipify.org/?format=json";
     public static void main(String[] args) {
-        System.out.println(args[1]);
-        String jsonAddress = "https://api.ipify.org/?format=json";
         UrlJsonParser jPars = new UrlJsonParser();
-        jPars.findAndSaveJsonFromUrl(jsonAddress, args[0]);
+        jPars.findAndSaveJsonFromUrl(JSON_ADDRESS, args[0]);
     }
 }
