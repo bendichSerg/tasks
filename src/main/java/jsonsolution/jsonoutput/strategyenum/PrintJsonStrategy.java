@@ -2,11 +2,8 @@ package jsonsolution.jsonoutput.strategyenum;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Map;
-import java.util.stream.Collectors;
 
-public enum PrintJsonStrategy implements jsonsolution.jsonoutput.strategyinterface.PrintJsonStrategy {
+public enum PrintJsonStrategy implements jsonsolution.jsonoutput.strategyinterface.ConsoleOutputStrategy {
     CONSOLE_OUTPUT_STRATEGY("console") {
         @Override
         public void output(String json) {
@@ -16,25 +13,34 @@ public enum PrintJsonStrategy implements jsonsolution.jsonoutput.strategyinterfa
     FILE_OUTPUT_STRATEGY("file") {
         @Override
         public void output(String json) {
-            try (FileWriter writer = new FileWriter("output.json", false)) {
+            try (FileWriter writer = new FileWriter(FILE_NAME, false)) {
                 writer.write(json);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     };
+    private static final String FILE_NAME = "output.json";
     private final String outputStrategy;
+
+    public String getOutputStrategy() {
+        return outputStrategy;
+    }
 
     private PrintJsonStrategy(String arg) {
         this.outputStrategy = arg;
     }
 
-    private static final Map<String, PrintJsonStrategy> args = Arrays.stream(PrintJsonStrategy.values())
-            .collect(Collectors.toMap(k -> k.outputStrategy, v -> v));
+    public static PrintJsonStrategy getStrategyByName(String nameStrategy){
+        for(PrintJsonStrategy tmpPrintJsonStrategy : values()){
+            if(tmpPrintJsonStrategy.getOutputStrategy().equals(nameStrategy)){
+                return tmpPrintJsonStrategy;
+            }
+        }
 
-    public static PrintJsonStrategy getStrategyByName(String arg) {
-        return args.get(arg);
+        throw new IllegalArgumentException("Uncorrect name");
     }
+
 
 }
 

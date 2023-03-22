@@ -25,13 +25,10 @@ public class UrlJsonParser {
         return doc;
     }
 
-    public PrintJsonStrategy chooseDataOutputStrategy(String arg) {
-        return PrintJsonStrategy.getStrategyByName(arg);
-    }
-
     public void findAndSaveJsonFromUrl(String url, String arg) {
         String json = urlConnection(url).body().text();
-        outputStrategy = chooseDataOutputStrategy(arg);
+
+        outputStrategy = PrintJsonStrategy.getStrategyByName(arg);
         outputStrategy.output(json);
     }
 }
