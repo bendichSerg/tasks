@@ -1,4 +1,4 @@
-package jsonsolution.jsonoutput;
+package jsonsolution.jsonoutput.strategyinterface.impl;
 
 import jsonsolution.jsonoutput.strategyinterface.PrintJsonStrategy;
 

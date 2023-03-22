@@ -1,7 +1,7 @@
 package jsonsolution.jsonoutput.strategyenum;
 
-import jsonsolution.jsonoutput.ConsoleOutputStrategy;
-import jsonsolution.jsonoutput.FileOutputStrategy;
+import jsonsolution.jsonoutput.strategyinterface.impl.ConsoleOutputStrategy;
+import jsonsolution.jsonoutput.strategyinterface.impl.FileOutputStrategy;
 
 public enum PrintJsonStrategy implements jsonsolution.jsonoutput.strategyinterface.PrintJsonStrategy {
     CONSOLE_OUTPUT_STRATEGY("console") {
