@@ -1,10 +1,12 @@
-package jsonsolution.jsonoutput.strategyinterface.impl;
+package jsonsolution.strategy.impl;
 
-import jsonsolution.jsonoutput.strategyinterface.PrintJsonStrategy;
+import jsonsolution.strategy.PrintJsonStrategy;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.FileWriter;
 import java.io.IOException;
 
+@Slf4j
 public class FileOutputStrategy implements PrintJsonStrategy {
     private static final String FILE_NAME = "output.json";
 
@@ -13,7 +15,7 @@ public class FileOutputStrategy implements PrintJsonStrategy {
         try (FileWriter writer = new FileWriter(FILE_NAME, false)) {
             writer.write(json);
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error("Error rewrite file:\n", e);
         }
     }
 }

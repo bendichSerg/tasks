@@ -1,6 +1,6 @@
-package jsonsolution.jsonoutput.strategyinterface.impl;
+package jsonsolution.strategy.impl;
 
-import jsonsolution.jsonoutput.strategyinterface.PrintJsonStrategy;
+import jsonsolution.strategy.PrintJsonStrategy;
 
 public class ConsoleOutputStrategy implements PrintJsonStrategy {
     @Override
