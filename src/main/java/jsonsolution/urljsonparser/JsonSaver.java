@@ -1,14 +1,17 @@
 package jsonsolution.urljsonparser;
 
-import jsonsolution.enums.JsonEnumStrategy;
+import com.google.gson.Gson;
+import jsonsolution.dto.UserDto;
 
 public class JsonSaver {
 
-    public void connectAndSaveJson(String arg) {
-        UrlConnection urlConnection= new UrlConnection();
+    public UserDto connectAndSaveJson() {
+        UrlConnection urlConnection = new UrlConnection();
         String json = urlConnection.connect().body().text();
-        JsonEnumStrategy outputStrategy;
-        outputStrategy = JsonEnumStrategy.getStrategyByName(arg);
-        outputStrategy.getObject().output(json);
+
+        UserDto userDto = new Gson().fromJson(json, UserDto.class);
+        System.out.println(userDto.getIp());
+
+        return new Gson().fromJson(json, UserDto.class);
     }
 }
