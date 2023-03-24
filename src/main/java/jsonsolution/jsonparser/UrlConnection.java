@@ -1,4 +1,4 @@
-package jsonsolution.jsonoperations;
+package jsonsolution.jsonparser;
 
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Jsoup;

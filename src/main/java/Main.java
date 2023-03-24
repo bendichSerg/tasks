@@ -1,6 +1,6 @@
 import jsonsolution.dto.UserDto;
-import jsonsolution.jsonoperations.JsonPrinter;
-import jsonsolution.jsonoperations.JsonSaver;
+import jsonsolution.jsonparser.JsonPrinter;
+import jsonsolution.jsonparser.JsonSaver;
 
 public class Main {
     public static void main(String[] args) {

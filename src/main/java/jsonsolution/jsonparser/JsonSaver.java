@@ -1,4 +1,4 @@
-package jsonsolution.jsonoperations;
+package jsonsolution.jsonparser;
 
 import com.google.gson.Gson;
 import jsonsolution.dto.UserDto;
