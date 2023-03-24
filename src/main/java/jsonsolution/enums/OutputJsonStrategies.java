@@ -8,16 +8,16 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public enum JsonEnumStrategy {
+public enum OutputJsonStrategies {
     CONSOLE_OUTPUT_STRATEGY("console", new ConsoleOutputStrategy()),
     FILE_OUTPUT_STRATEGY("file", new FileOutputStrategy());
     private final String outputStrategy;
     private final PrintJsonStrategy object;
 
-    public static JsonEnumStrategy getStrategyByName(String nameStrategy) {
-        for (JsonEnumStrategy tmpPrintJsonStrategy : values()) {
-            if (tmpPrintJsonStrategy.getOutputStrategy().equals(nameStrategy)) {
-                return tmpPrintJsonStrategy;
+    public static PrintJsonStrategy getStrategyByName(String nameStrategy) {
+        for (OutputJsonStrategies outputJsonStrategies : values()) {
+            if (outputJsonStrategies.getOutputStrategy().equals(nameStrategy)) {
+                return outputJsonStrategies.object;
             }
         }
 

@@ -1,13 +1,13 @@
 import jsonsolution.dto.UserDto;
-import jsonsolution.urljsonparser.JsonPrinter;
-import jsonsolution.urljsonparser.JsonSaver;
+import jsonsolution.jsonoperations.JsonPrinter;
+import jsonsolution.jsonoperations.JsonSaver;
 
 public class Main {
     public static void main(String[] args) {
-        JsonSaver jPars = new JsonSaver();
-        UserDto userDto = jPars.connectAndSaveJson();
+        JsonSaver jsonSaver = new JsonSaver();
+        UserDto userDto = jsonSaver.connectAndSaveJson();
         JsonPrinter jsonPrinter = new JsonPrinter();
-        jsonPrinter.printJson(userDto, args[1]);
+        jsonPrinter.printJsonFromDto(userDto, args[1]);
 
     }
 }
