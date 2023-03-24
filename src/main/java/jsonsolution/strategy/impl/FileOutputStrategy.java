@@ -8,7 +8,7 @@ import java.io.IOException;
 
 @Slf4j
 public class FileOutputStrategy implements PrintJsonStrategy {
-    private static final String FILE_NAME = "output.json";
+    private static final String FILE_NAME = "output.txt";
 
     @Override
     public void output(String json) {

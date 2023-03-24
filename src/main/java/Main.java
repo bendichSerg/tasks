@@ -8,6 +8,5 @@ public class Main {
         UserDto userDto = jsonSaver.connectAndSaveJson();
         JsonPrinter jsonPrinter = new JsonPrinter();
         jsonPrinter.printJsonFromDto(userDto, args[1]);
-
     }
 }
