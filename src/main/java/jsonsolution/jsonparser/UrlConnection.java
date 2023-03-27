@@ -1,11 +1,9 @@
 package jsonsolution.jsonparser;
 
-import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import java.io.IOException;
 
-@Slf4j
 public class UrlConnection {
     private static final String JSON_ADDRESS = "https://api.ipify.org/?format=json";
 
