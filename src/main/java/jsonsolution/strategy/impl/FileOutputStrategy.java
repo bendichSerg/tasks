@@ -15,7 +15,7 @@ public class FileOutputStrategy implements PrintJsonStrategy {
         try (FileWriter writer = new FileWriter(FILE_NAME, false)) {
             writer.write(json);
         } catch (IOException e) {
-            log.error("Error rewrite file:\n", e);
+            System.out.println("Error rewrite file:\n" + e.getMessage());
         }
     }
 }

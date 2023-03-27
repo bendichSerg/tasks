@@ -14,7 +14,7 @@ public class UrlConnection {
         try {
             doc = Jsoup.connect(JSON_ADDRESS).ignoreContentType(true).get();
         } catch (IOException e) {
-            log.error("Error url connection:\n", e);
+            System.out.println("Error url connection:\n" + e.getMessage());
         }
         return doc;
     }
