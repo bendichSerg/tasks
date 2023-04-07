@@ -1,5 +1,5 @@
 package jsonsolution.strategy;
 
 public interface Printer {
-    void output(String line);
+    void output(String lineToOutput);
 }

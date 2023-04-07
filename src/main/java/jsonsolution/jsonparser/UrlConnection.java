@@ -13,7 +13,7 @@ public class UrlConnection {
         try {
             doc = Jsoup.connect(JSON_ADDRESS).ignoreContentType(true).get();
         } catch (IOException e) {
-            System.out.println("Error url connection, please connect:\n" + e.getMessage());
+            System.err.println("Error url connection, please connect:\n" + e.getMessage());
         }
         return doc;
     }
