@@ -1,11 +1,11 @@
 package jsonsolution.strategy.impl;
 
-import jsonsolution.strategy.Printer;
+import jsonsolution.strategy.PrinterStrategy;
 
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class FileOutputStrategy implements Printer {
+public class FileOutputStrategy implements PrinterStrategy {
     private static final String FILE_NAME = "output.txt";
 
     @Override

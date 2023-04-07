@@ -1,6 +1,6 @@
 package jsonsolution.enums;
 
-import jsonsolution.strategy.Printer;
+import jsonsolution.strategy.PrinterStrategy;
 import jsonsolution.strategy.impl.ConsoleOutputStrategy;
 import jsonsolution.strategy.impl.FileOutputStrategy;
 import lombok.AllArgsConstructor;
@@ -11,7 +11,7 @@ import lombok.Getter;
 public enum OutputStrategies {
     CONSOLE(new ConsoleOutputStrategy()),
     FILE(new FileOutputStrategy());
-    private final Printer outputStrategy;
+    private final PrinterStrategy outputStrategy;
 }
 
 
