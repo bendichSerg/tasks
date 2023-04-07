@@ -1,10 +1,10 @@
 package jsonsolution.jsonparser;
 
 import jsonsolution.dto.UserDto;
-import jsonsolution.enums.OutputJsonStrategies;
+import jsonsolution.enums.OutputStrategies;
 
 public class JsonPrinter {
     public void printJsonFromDto(UserDto userDto, String arg) {
-        OutputJsonStrategies.valueOf(arg.toUpperCase()).getOutputStrategy().output(userDto.getIp());
+        OutputStrategies.valueOf(arg.toUpperCase()).getOutputStrategy().output(userDto.getIp());
     }
 }

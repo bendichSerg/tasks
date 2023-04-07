@@ -8,7 +8,7 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public enum OutputJsonStrategies {
+public enum OutputStrategies {
     CONSOLE(new ConsoleOutputStrategy()),
     FILE(new FileOutputStrategy());
     private final Printer outputStrategy;

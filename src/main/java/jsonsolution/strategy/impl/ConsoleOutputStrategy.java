@@ -4,7 +4,7 @@ import jsonsolution.strategy.Printer;
 
 public class ConsoleOutputStrategy implements Printer {
     @Override
-    public void output(String line) {
-        System.out.println(line);
+    public void output(String lineToOutput) {
+        System.out.println(lineToOutput);
     }
 }
