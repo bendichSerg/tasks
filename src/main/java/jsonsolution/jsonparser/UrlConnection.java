@@ -2,6 +2,7 @@ package jsonsolution.jsonparser;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+
 import java.io.IOException;
 
 public class UrlConnection {
@@ -12,7 +13,7 @@ public class UrlConnection {
         try {
             doc = Jsoup.connect(JSON_ADDRESS).ignoreContentType(true).get();
         } catch (IOException e) {
-            System.out.println("Error url connection:\n" + e.getMessage());
+            System.out.println("Error url connection, please connect:\n" + e.getMessage());
         }
         return doc;
     }

@@ -1,10 +1,10 @@
 package jsonsolution.strategy.impl;
 
-import jsonsolution.strategy.PrintJsonStrategy;
+import jsonsolution.strategy.Printer;
 
-public class ConsoleOutputStrategy implements PrintJsonStrategy {
+public class ConsoleOutputStrategy implements Printer {
     @Override
-    public void output(String json) {
-        System.out.println(json);
+    public void output(String line) {
+        System.out.println(line);
     }
 }
