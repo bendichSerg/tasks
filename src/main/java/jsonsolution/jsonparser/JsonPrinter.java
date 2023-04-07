@@ -5,6 +5,6 @@ import jsonsolution.enums.OutputJsonStrategies;
 
 public class JsonPrinter {
     public void printJsonFromDto(UserDto userDto, String arg) {
-        OutputJsonStrategies.valueOf(arg.toUpperCase()).getObject().output(userDto.getIp());
+        OutputJsonStrategies.valueOf(arg.toUpperCase()).getOutputStrategy().output(userDto.getIp());
     }
 }

@@ -11,7 +11,7 @@ import lombok.Getter;
 public enum OutputJsonStrategies {
     CONSOLE(new ConsoleOutputStrategy()),
     FILE(new FileOutputStrategy());
-    private final Printer object;
+    private final Printer outputStrategy;
 }
 
 
