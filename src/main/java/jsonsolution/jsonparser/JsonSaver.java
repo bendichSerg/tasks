@@ -7,7 +7,7 @@ public class JsonSaver {
 
     public UserDto connectAndSaveJson() {
         UrlConnection urlConnection = new UrlConnection();
-        String json = urlConnection.connect().body().text();
-        return new Gson().fromJson(json, UserDto.class);
+        String jsonLine = urlConnection.connect().body().text();
+        return new Gson().fromJson(jsonLine, UserDto.class);
     }
 }
