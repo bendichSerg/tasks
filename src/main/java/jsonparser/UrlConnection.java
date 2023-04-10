@@ -1,4 +1,4 @@
-package jsonsolution.jsonparser;
+package jsonparser;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

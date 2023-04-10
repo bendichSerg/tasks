@@ -1,4 +1,4 @@
-package jsonsolution.enums;
+package enums;
 
 import jsonsolution.strategy.PrinterStrategy;
 import jsonsolution.strategy.impl.ConsoleOutputStrategy;

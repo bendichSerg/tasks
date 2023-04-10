@@ -1,10 +1,10 @@
-package jsonsolution.dto;
+package dto;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class UserDto {
+public class Address {
     private String ip;
 }
