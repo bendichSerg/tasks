@@ -5,6 +5,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Address {
+public class AddressDto {
     private String ip;
 }
